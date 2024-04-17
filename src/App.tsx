@@ -1,15 +1,18 @@
-import { useState } from "react";
 import "./App.css";
+import { CountdownTimer } from "./countdownTimer";
+import { UserList } from "./userList";
+import { WindowSize } from "./windowSize";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+      <div>
+        <h1>Таймер:</h1>
+        <CountdownTimer countTimer={20} />
+        <UserList url="https://jsonplaceholder.typicode.com/users" />
+      </div>
+      <div>
+        <WindowSize />
       </div>
     </>
   );
